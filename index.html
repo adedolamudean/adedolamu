@@ -113,6 +113,14 @@
             position: relative;
         }
         
+        .links a:after {
+            content: "↗";
+            font-size: 0.75rem;
+            position: relative;
+            top: -0.5rem;
+            margin-left: 0.25rem;
+        }
+        
         .links a:hover {
             text-decoration: underline;
         }
@@ -217,9 +225,83 @@
         .credential-text span.visible {
             opacity: 1;
         }
+
+       /* Starry background styles */
+body {
+    background-color: #0f0f0f;
+    color: #f5f5f5;
+    padding: 2rem;
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.shooting-star {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%);
+    border-radius: 0;
+    opacity: 1;
+    transform-origin: left center;
+    z-index: 1;
+    box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes shoot {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+        width: 100%;
+    }
+    10% {
+        opacity: 1;
+        width: 100%;
+    }
+    70% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(var(--travel-x)) translateY(var(--travel-y));
+        opacity: 0;
+        width: 60%;
+    }
+}
+
+.shooting-star:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 100% 0 0 100%;
+    filter: blur(1px);
+}
     </style>
 </head>
 <body>
+    <body>
+        <div class="stars-container" id="starsContainer"></div>
+        <div class="container">
     <div class="container">
         <header>
             <div class="intro">hello there!!, i'm</div>
@@ -463,7 +545,152 @@ function rotateSkills() {
 }
 
 // Change skills text every 3.5 seconds
-setInterval(rotateSkills, 4000);
+setInterval(rotateSkills, 3500);
+
+// Create starry background
+document.addEventListener('DOMContentLoaded', function() {
+    const starsContainer = document.getElementById('starsContainer');
+    const starsCount = 200;
+    
+    // Star data storage
+    let stars = [];
+    
+    // Create regular stars
+    for (let i = 0; i < starsCount; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        
+        // Random size between 1px and 3px
+        const size = Math.random() * 2 + 1;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        
+        // Random position
+        const leftPos = Math.random() * 100;
+        const topPos = Math.random() * 100;
+        star.style.left = `${leftPos}%`;
+        star.style.top = `${topPos}%`;
+        
+        // Random opacity for twinkling effect
+        star.style.opacity = `${Math.random() * 0.7 + 0.3}`;
+        
+        // Add twinkling animation with random duration
+        const twinkleDuration = Math.random() * 3 + 2;
+        star.style.animation = `twinkle ${twinkleDuration}s ease-in-out infinite alternate`;
+        
+        starsContainer.appendChild(star);
+        
+        // Store star info for later shooting star creation
+        stars.push({
+            element: star,
+            left: leftPos,
+            top: topPos,
+            size: size
+        });
+    }
+    
+    // Function to make a star shoot
+    function makeStarShoot() {
+    // Create a shooting star element
+    const shootingStar = document.createElement('div');
+    shootingStar.className = 'shooting-star';
+    
+    // Position it randomly on the top or right edge of the screen
+    const startFromTop = Math.random() > 0.5;
+    
+    let leftPos, topPos;
+    
+    if (startFromTop) {
+        // Start from top edge
+        leftPos = Math.random() * 70 + 15; // 15-85% from left
+        topPos = -5; // Just above the visible area
+    } else {
+        // Start from right edge
+        leftPos = 105; // Just off the right edge
+        topPos = Math.random() * 40; // First 40% of the screen height
+    }
+    
+    shootingStar.style.left = `${leftPos}%`;
+    shootingStar.style.top = `${topPos}%`;
+    
+    // Set random length and angle
+    const length = Math.random() * 70 + 50; // Longer trails: 50-120px
+    
+    // Calculate angle based on starting position
+    let angle;
+    if (startFromTop) {
+        angle = Math.random() * 30 + 240; // 240-270 degrees (diagonally down-left)
+    } else {
+        angle = Math.random() * 30 + 190; // 190-220 degrees (diagonally down-left)
+    }
+    
+    shootingStar.style.width = `${length}px`;
+    shootingStar.style.transform = `rotate(${angle}deg)`;
+    
+    // Calculate distance to travel based on angle
+    const radians = angle * (Math.PI / 180);
+    const travelDistance = Math.random() * 300 + 200; // 200-500px travel distance
+    const travelX = -Math.cos(radians) * travelDistance;
+    const travelY = Math.sin(radians) * travelDistance;
+    
+    // Set custom properties for the animation
+    shootingStar.style.setProperty('--travel-x', `${travelX}px`);
+    shootingStar.style.setProperty('--travel-y', `${travelY}px`);
+    
+    // Randomize speed (duration)
+    const duration = Math.random() * 0.8 + 0.6; // 0.6-1.4 seconds (faster)
+    
+    // Apply the shoot animation
+    shootingStar.style.animation = `shoot ${duration}s cubic-bezier(0.05, 0.5, 0.5, 1) forwards`;
+    
+    // Random thickness for variety
+    const thickness = Math.random() * 1.5 + 1;
+    shootingStar.style.height = `${thickness}px`;
+    
+    // Add a subtle color tint to some meteors
+    if (Math.random() > 0.7) {
+        const hue = Math.random() > 0.5 ? '210' : '45'; // Blue or gold tint
+        const colorIntensity = Math.random() * 20 + 5; // 5-25%
+        shootingStar.style.background = `linear-gradient(90deg, 
+            rgba(255,255,255,0.9) 0%, 
+            hsla(${hue}, 100%, 70%, 0.5) 30%, 
+            rgba(255,255,255,0) 100%)`;
+    }
+    
+    // Add to DOM
+    starsContainer.appendChild(shootingStar);
+    
+    // Clean up after animation
+    setTimeout(() => {
+        shootingStar.remove();
+    }, duration * 1000 + 100);
+}
+
+// Trigger shooting stars with better timing
+function scheduleShootingStars() {
+    // Create a cluster of 1-3 shooting stars
+    const count = Math.floor(Math.random() * 3) + 1;
+    
+    for (let i = 0; i < count; i++) {
+        // Add slight delay between stars in the same cluster
+        setTimeout(makeStarShoot, i * (Math.random() * 100 + 50));
+    }
+    
+    // Schedule next cluster with variable timing
+    const nextCluster = Math.random() * 7000 + 2000; // 2-9 seconds between clusters
+    setTimeout(scheduleShootingStars, nextCluster);
+}
+
+// Start the shooting star sequence
+scheduleShootingStars();
+
+// Initial burst of shooting stars when page loads
+setTimeout(() => {
+    makeStarShoot();
+    setTimeout(makeStarShoot, 700);
+    setTimeout(makeStarShoot, 1500);
+}, 1000);
+});
     </script>
 </body>
 </html>
