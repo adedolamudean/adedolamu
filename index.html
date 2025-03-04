@@ -191,70 +191,50 @@ h1, h2 {
 }
         
         /* Credentials section styles */
-        .credentials {
-            margin-bottom: 3rem;
-        }
-        
-        .credentials-carousel {
-            margin-top: 1rem;
-            height: 180px;
-            position: relative;
-        }
-        
-        .credential-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: absolute;
-            opacity: 0;
-            width: 100%;
-            transition: opacity 0.5s ease-in-out;
-        }
-        
-        .credential-item.visible {
-            opacity: 1;
-        }
-        
-        .credential-image {
-            width: 160px;
-            height: 120px;
-            object-fit: contain;
-            margin-bottom: 1rem;
-            background-color: #1a1a1a;
-            border-radius: 4px;
-            padding: 0.5rem;
-        }
-        
-        .credential-name {
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin-bottom: 0.25rem;
-            text-align: center;
-        }
-        
-        .credential-issuer {
-            font-size: 0.8rem;
-            color: #aaa;
-            text-align: center;
-        }
-        
-        .credential-text {
-            display: flex;
-            align-items: center;
-            height: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .credential-text span {
-            font-size: 1rem;
-            opacity: 0;
-            position: absolute;
-            transition: opacity 0.5s ease-in-out;
-        }
-        
-        .credential-text span.visible {
-            opacity: 1;
-        }
+      .credentials-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 1.5rem;
+}
+
+.credential-item {
+    height: auto;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.credential-image {
+    width: 100%;
+    height: auto;
+    max-height: 120px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    filter: brightness(0.9);
+}
+
+.credential-item:hover .credential-image {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.credential-name {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.credential-issuer {
+    font-size: 0.85rem;
+    color: #aaa;
+    text-align: center;
+}
 
        /* Starry background styles */
 body {
