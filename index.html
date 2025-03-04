@@ -67,36 +67,6 @@
         section {
             margin-bottom: 2rem;
         }
-
-h1, h2 {
-  background: linear-gradient(90deg, #fff 0%, #a78bfa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 30px rgba(167, 139, 250, 0.3);
-}
-
-.job-title, .credential-name {
-  color: #f5f5f5;
-  position: relative;
-}
-
-.job-title:after, .credential-name:after {
-  content: "";
-  position: absolute;
-  left: -5px;
-  right: -5px;
-  bottom: -2px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.6), transparent);
-  opacity: 0;
-  transform: scaleX(0.8);
-  transition: all 0.3s ease;
-}
-
-.job:hover .job-title:after {
-  opacity: 1;
-  transform: scaleX(1);
-}
         
         h2 {
             font-size: 1rem;
@@ -168,30 +138,30 @@ h1, h2 {
             margin-right: 0.5rem;
         }
 
-       .skills-container {
+        .skills {
+    margin-bottom: 3rem;
+}
+
+.skill-text {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 1.5rem;
+    align-items: center;
+    height: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-.skill-badge {
-    background: linear-gradient(135deg, rgba(50, 50, 50, 0.8), rgba(30, 30, 30, 0.8));
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
+.skill-text span {
+    font-size: 1rem;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.skill-badge:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    border-color: rgba(255, 255, 255, 0.2);
-    background: linear-gradient(135deg, rgba(70, 70, 70, 0.8), rgba(40, 40, 40, 0.8));
+.skill-text span.visible {
+    opacity: 1;
+}
         
         /* Credentials section styles */
-      .credentials {
+        .credentials {
             margin-bottom: 3rem;
         }
         
