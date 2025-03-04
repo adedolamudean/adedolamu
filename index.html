@@ -351,6 +351,33 @@ h1, h2 {
         html {
             scroll-behavior: smooth;
         }
+        .job-company {
+    position: relative; /* Required for the pseudo-element */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for magnification */
+}
+
+.job-company:hover {
+    transform: scale(1.1); /* Magnify on hover */
+    cursor: pointer;
+}
+
+.job-company::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px; /* Position the underline below the text */
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.6), transparent);
+    opacity: 0; /* Hide by default */
+    transform: scaleX(0.8); /* Initial scale */
+    transition: all 0.3s ease; /* Smooth transition for the underline */
+}
+
+.job-company:hover::after {
+    opacity: 1; /* Show on hover */
+    transform: scaleX(1); /* Expand the underline */
+}
     </style>
 </head>
 <body>
