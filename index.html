@@ -296,6 +296,36 @@ body {
     border-radius: 100% 0 0 100%;
     filter: blur(1px);
 }
+    
+h1, h2 {
+  background: linear-gradient(90deg, #fff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(167, 139, 250, 0.3);
+}
+
+.job-title, .credential-name {
+  color: #f5f5f5;
+  position: relative;
+}
+
+.job-title:after, .credential-name:after {
+  content: "";
+  position: absolute;
+  left: -5px;
+  right: -5px;
+  bottom: -2px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.6), transparent);
+  opacity: 0;
+  transform: scaleX(0.8);
+  transition: all 0.3s ease;
+}
+
+.job:hover .job-title:after {
+  opacity: 1;
+  transform: scaleX(1);
+}
     </style>
 </head>
 <body>
