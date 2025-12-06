@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>without a coffee mug | Adedolamu Ayandele</title>
+    <title>Journal | Adedolamu Ayandele</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -13,12 +13,6 @@
             padding: 2rem;
             line-height: 1.6;
             font-family: 'Roboto', sans-serif;
-            overflow-x: hidden;
-        }
-        h1 {
-            background: linear-gradient(90deg, #fff 0%, #a78bfa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
         .container { max-width: 800px; margin: 0 auto; }
         header {
@@ -27,59 +21,39 @@
             justify-content: space-between;
             align-items: center;
         }
-        h1 { font-size: 3rem; }
+        h1 {
+            font-size: 3rem;
+            background: linear-gradient(90deg, #fff 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
         .back-link {
             color: #f5f5f5;
             text-decoration: none;
             transition: all 0.3s;
-            font-size: 0.9rem;
         }
         .back-link:hover {
             color: #a78bfa;
             transform: translateX(-5px);
         }
-        .blog-list { margin-top: 2rem; }
-        .blog-post {
+        .entry {
             background: #1a1a1a;
             padding: 2rem;
             margin-bottom: 2rem;
             border-radius: 8px;
-            border: 1px solid transparent;
-            transition: all 0.3s;
-            cursor: pointer;
+            border-left: 4px solid #a78bfa;
         }
-        .blog-post:hover {
-            border-color: #a78bfa;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(167, 139, 250, 0.2);
-        }
-        .post-date {
+        .entry-date {
             color: #999;
             font-size: 0.85rem;
-            margin-bottom: 0.5rem;
-        }
-        .post-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 0.75rem;
-            color: #f5f5f5;
-        }
-        .post-excerpt {
-            color: #ccc;
-            line-height: 1.6;
             margin-bottom: 1rem;
         }
-        .post-tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
+        .entry-content {
+            color: #e5e5e5;
+            line-height: 1.8;
         }
-        .tag {
-            background: rgba(167, 139, 250, 0.2);
-            color: #a78bfa;
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
-            font-size: 0.8rem;
+        .entry-content p {
+            margin-bottom: 1rem;
         }
         .stars-container {
             position: fixed;
@@ -97,21 +71,9 @@
             border-radius: 50%;
             opacity: 0.8;
         }
-        .empty-state {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: #999;
-        }
-        .empty-state h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(90deg, #fff 0%, #a78bfa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; }
-            .blog-post { padding: 1.5rem; }
+            .entry { padding: 1.5rem; }
             header { flex-direction: column; align-items: flex-start; gap: 1rem; }
         }
     </style>
@@ -120,203 +82,45 @@
     <div class="stars-container" id="stars"></div>
     <div class="container">
         <header>
-            <h1>without a coffee mug</h1>
-            <a href="index.html" class="back-link">← 🫶🏽</a>
+            <h1>Journal</h1>
+            <a href="index.html" class="back-link">← back to portfolio</a>
         </header>
         
-        <div class="blog-list" id="blogList"></div>
+        <div id="entries">
+            <!-- Add your journal entries here -->
+            
+            <div class="entry">
+                <div class="entry-date">December 6, 2024</div>
+                <div class="entry-content">
+                    <p>Started building my blog today. Realized I just wanted a simple place to write my thoughts without all the complexity. Sometimes the simple solution is the best solution.</p>
+                    <p>In cybersecurity, we talk about defense in depth and multiple layers of protection. But in personal projects, maybe simplicity is security. Less moving parts, less to break.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-date">December 5, 2024</div>
+                <div class="entry-content">
+                    <p>Spent the day configuring firewalls at work. There's something meditative about setting up proper security rules. Each rule is like a decision about what you trust and what you don't.</p>
+                    <p>Made me think about how we set boundaries in life too. What do we let in? What do we keep out?</p>
+                </div>
+            </div>
+
+            <!-- 
+            To add a new entry, copy this template:
+            
+            <div class="entry">
+                <div class="entry-date">Month Day, Year</div>
+                <div class="entry-content">
+                    <p>Your thoughts here...</p>
+                    <p>More thoughts...</p>
+                </div>
+            </div>
+            -->
+
+        </div>
     </div>
     
     <script>
-        // Blog posts data - Add your posts directly here
-        const blogPosts = [
-            {
-                id: "getting-started-network-security",
-                title: "Getting Started with Network Security: A Beginner's Guide",
-                date: "December 6, 2024",
-                excerpt: "An introduction to network security fundamentals, covering essential concepts every aspiring security engineer should know.",
-                tags: ["Network Security", "Beginner", "Guide"],
-                content: `
-                    <p>Network security is the foundation of protecting digital assets in today's interconnected world. Whether you're just starting your cybersecurity journey or looking to strengthen your fundamentals, understanding network security is crucial.</p>
-
-                    <h2>What is Network Security?</h2>
-                    <p>Network security encompasses the policies, practices, and technologies designed to protect the integrity, confidentiality, and availability of computer networks and data. It's about creating barriers between your internal network and external threats.</p>
-
-                    <h2>Key Concepts to Master</h2>
-                    <h3>1. Defense in Depth</h3>
-                    <p>Never rely on a single security measure. Implement multiple layers of security controls throughout your network. If one layer fails, others continue to provide protection.</p>
-
-                    <h3>2. The CIA Triad</h3>
-                    <p>The foundation of information security:</p>
-                    <ul>
-                        <li><strong>Confidentiality:</strong> Ensuring data is accessible only to authorized users</li>
-                        <li><strong>Integrity:</strong> Maintaining data accuracy and preventing unauthorized modifications</li>
-                        <li><strong>Availability:</strong> Ensuring systems and data are accessible when needed</li>
-                    </ul>
-
-                    <h3>3. Network Segmentation</h3>
-                    <p>Dividing your network into smaller segments helps contain breaches and limit lateral movement. Think of it as creating compartments in a ship – if one compartment floods, the others remain safe.</p>
-
-                    <h2>Essential Tools and Technologies</h2>
-                    <p>As you begin your journey, familiarize yourself with these core technologies:</p>
-                    <ul>
-                        <li>Firewalls (both network and host-based)</li>
-                        <li>Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS)</li>
-                        <li>Virtual Private Networks (VPNs)</li>
-                        <li>Network monitoring tools</li>
-                        <li>Security Information and Event Management (SIEM) systems</li>
-                    </ul>
-
-                    <h2>Building Your Skills</h2>
-                    <p>Here's my advice for aspiring network security professionals:</p>
-                    <ol>
-                        <li>Start with networking fundamentals – understand TCP/IP, routing, and switching</li>
-                        <li>Get hands-on experience with virtual labs (GNS3, Packet Tracer)</li>
-                        <li>Pursue relevant certifications (CompTIA Network+, Security+, Cisco CCNA)</li>
-                        <li>Stay current with security news and emerging threats</li>
-                        <li>Join cybersecurity communities and participate in CTF challenges</li>
-                    </ol>
-
-                    <h2>Common Threats to Understand</h2>
-                    <p>Knowledge of common attack vectors is essential:</p>
-                    <ul>
-                        <li>DDoS (Distributed Denial of Service) attacks</li>
-                        <li>Man-in-the-Middle (MitM) attacks</li>
-                        <li>Ransomware and malware propagation</li>
-                        <li>Social engineering attacks</li>
-                        <li>Zero-day exploits</li>
-                    </ul>
-
-                    <h2>Final Thoughts</h2>
-                    <p>Network security is a continuously evolving field. What works today might not be sufficient tomorrow. Stay curious, keep learning, and never stop questioning your security posture.</p>
-
-                    <blockquote>
-                        "Security is not a product, but a process." - Bruce Schneier
-                    </blockquote>
-
-                    <p>Remember, every expert was once a beginner. Start your journey today, and you'll be amazed at how far you can go.</p>
-                `
-            },
-            {
-                id: "firewall-configuration-best-practices",
-                title: "Firewall Configuration Best Practices",
-                date: "December 5, 2024",
-                excerpt: "Learn essential firewall configuration techniques to strengthen your network perimeter and protect against modern threats.",
-                tags: ["Firewall", "Security", "Best Practices"],
-                content: `
-                    <p>Firewalls are your first line of defense in network security. A properly configured firewall can mean the difference between a secure network and a compromised one. Let me share some best practices I've learned from years of working with enterprise firewalls.</p>
-
-                    <h2>The Golden Rule: Deny by Default</h2>
-                    <p>Always start with a deny-all policy and explicitly allow only necessary traffic. This approach, known as whitelisting, ensures that any traffic not explicitly permitted is automatically blocked.</p>
-
-                    <h2>Essential Configuration Practices</h2>
-
-                    <h3>1. Implement the Principle of Least Privilege</h3>
-                    <p>Only allow the minimum level of access required for legitimate business operations. Every rule should have a clear business justification.</p>
-
-                    <h3>2. Use Zones and Segments</h3>
-                    <p>Create security zones (DMZ, internal, external) and apply different security policies to each. This limits the blast radius of any potential breach.</p>
-
-                    <h3>3. Enable Logging and Monitoring</h3>
-                    <p>You can't protect what you can't see. Enable comprehensive logging for:</p>
-                    <ul>
-                        <li>Denied connections (to identify attack attempts)</li>
-                        <li>Allowed connections (to validate legitimate traffic patterns)</li>
-                        <li>Configuration changes (audit trail)</li>
-                        <li>Administrative access (accountability)</li>
-                    </ul>
-
-                    <h3>4. Regular Rule Review and Cleanup</h3>
-                    <p>Firewall rules accumulate over time. Schedule quarterly reviews to:</p>
-                    <ul>
-                        <li>Remove obsolete rules</li>
-                        <li>Consolidate overlapping rules</li>
-                        <li>Update documentation</li>
-                        <li>Verify rule effectiveness</li>
-                    </ul>
-
-                    <h2>Advanced Firewall Features</h2>
-
-                    <h3>Deep Packet Inspection (DPI)</h3>
-                    <p>Modern firewalls can inspect packet contents, not just headers. Enable DPI to detect and block sophisticated threats hiding in legitimate traffic.</p>
-
-                    <h3>SSL/TLS Inspection</h3>
-                    <p>With most internet traffic encrypted, SSL inspection is crucial. However, implement it carefully, considering privacy and performance implications.</p>
-
-                    <h3>Application Layer Filtering</h3>
-                    <p>Move beyond port-based filtering. Control access based on applications, users, and content types for granular security.</p>
-
-                    <h2>Common Mistakes to Avoid</h2>
-                    <ol>
-                        <li><strong>Over-permissive "ANY ANY" rules:</strong> These defeat the purpose of having a firewall</li>
-                        <li><strong>Neglecting outbound filtering:</strong> Control what leaves your network, not just what comes in</li>
-                        <li><strong>Disabled logging:</strong> Logs are essential for incident response and compliance</li>
-                        <li><strong>Weak administrative access:</strong> Protect firewall management interfaces with MFA</li>
-                        <li><strong>Outdated firmware:</strong> Keep your firewall software up to date</li>
-                    </ol>
-
-                    <h2>Documentation is Critical</h2>
-                    <p>Every firewall rule should include:</p>
-                    <ul>
-                        <li>Purpose/business justification</li>
-                        <li>Requested by (and approved by)</li>
-                        <li>Date created</li>
-                        <li>Review date</li>
-                        <li>Related change ticket</li>
-                    </ul>
-
-                    <h2>Testing Your Configuration</h2>
-                    <p>Never assume your firewall rules work as intended. Regularly test using:</p>
-                    <ul>
-                        <li>Port scanning tools (nmap)</li>
-                        <li>Traffic simulation</li>
-                        <li>Penetration testing</li>
-                        <li>Rule simulation features</li>
-                    </ul>
-
-                    <h2>Conclusion</h2>
-                    <p>A well-configured firewall is an art and a science. It requires continuous attention, regular updates, and constant vigilance. The effort you invest in proper firewall configuration will pay dividends in the security and reliability of your network.</p>
-
-                    <blockquote>
-                        "The best firewall is the one that's properly configured, actively monitored, and regularly updated."
-                    </blockquote>
-                `
-            }
-            // Add more posts here in the same format
-        ];
-
-        // Store posts in localStorage so blog-post.html can access them
-        localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
-        
-        // Render blog posts
-        const blogList = document.getElementById('blogList');
-        
-        if (blogPosts.length === 0) {
-            blogList.innerHTML = `
-                <div class="empty-state">
-                    <h2>Coming Soon</h2>
-                    <p>Blog posts about network security, cybersecurity insights, and tech thoughts will appear here.</p>
-                </div>
-            `;
-        } else {
-            blogPosts.forEach(post => {
-                const postEl = document.createElement('div');
-                postEl.className = 'blog-post';
-                postEl.onclick = () => window.location.href = `blog-post.html?id=${post.id}`;
-                
-                postEl.innerHTML = `
-                    <div class="post-date">${post.date}</div>
-                    <div class="post-title">${post.title}</div>
-                    <div class="post-excerpt">${post.excerpt}</div>
-                    <div class="post-tags">
-                        ${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                    </div>
-                `;
-                
-                blogList.appendChild(postEl);
-            });
-        }
-        
         // Create stars
         const stars = document.getElementById('stars');
         for (let i = 0; i < 200; i++) {
