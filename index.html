@@ -1,210 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <!-- Essential Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adedolamu Ayandele | Network Security Engineer | Cybersecurity Professional</title>
-
-       <!-- Primary Meta Tags -->
-    <title>Adedolamu Ayandele</title>
-    <meta name="Adedolamu Ayandele" content="Portfolio">
-    <meta name="Network Security Engineer" content="skilled Network Security Engineer specializing in cybersecurity, network infrastructure, and AI security. Expertise in Firewall Configuration, Network Security, Switching & Routing and Regulatory Compliance.">
-
-    <!-- Open Graph / Facebook Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://adedolamudean.github.io/adedolamu/">
-    <meta property="og:title" content="Adedolamu Ayandele">
-    <meta property="og:description" content="skilled Network Security Engineer specializing in cybersecurity, network infrastructure, and AI security. Expertise in Firewall Configuration, Network Security, Switching & Routing and Regulatory Compliance.">
-
-      <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://adedolamudean.github.io/adedolamu/">
-    <meta name="twitter:title" content="Adedolamu Ayandele">
-    <meta name="twitter:description" content="skilled Network Security Engineer specializing in cybersecurity, network infrastructure, and AI security. Expertise in Firewall Configuration, Network Security, Switching & Routing and Regulatory Compliance.">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Adedolamu Ayandele is a skilled Network Security Engineer specializing in cybersecurity, network infrastructure, and AI security. Expertise in Firewall Configuration, Cloud Security, and Regulatory Compliance.">
-    <meta name="keywords" content="Network Security, Cybersecurity, Network Engineer, Firewall Configuration, Cloud Security, AI Security, Information Security, Penetration Testing, Threat Intelligence">
-    <meta name="author" content="Adedolamu Ayandele">
-    
-    <!-- Geo Tags -->
-    <meta name="geo.region" content="NG-LA">
-    <meta name="geo.placename" content="Lagos, Nigeria">
-    <meta name="geo.position" content="6.5244;3.3792">
-    <meta name="ICBM" content="6.5244, 3.3792">
-
-       <!-- Robots Meta Tag -->
-    <meta name="robots" content="index, follow">
-    <meta name="googlebot" content="index, follow">
-
-      <!-- Language and Content Type -->
-    <meta http-equiv="content-language" content="en-US">
-      
-    <!-- Canonical URL -->
+    <title>Adedolamu Ayandele | Network Security Engineer</title>
+    <meta name="description" content="Network Security Engineer specializing in cybersecurity, network infrastructure, and AI security">
     <link rel="canonical" href="https://adedolamudean.github.io/adedolamu/">
-    
-    <!-- Robots Meta Tag -->
-    <meta name="robots" content="index, follow">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adedolamu Ayandele | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background-color: #0f0f0f;
+            background: #0f0f0f;
             color: #f5f5f5;
             padding: 2rem;
             line-height: 1.6;
-            font-family: 'Roboto', sans-serif; /* Updated font */
-            position: relative;
+            font-family: 'Roboto', sans-serif;
             overflow-x: hidden;
         }
-
-h1, h2 {
-  background: linear-gradient(90deg, #fff 0%, #a78bfa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 30px rgba(167, 139, 250, 0.3);
-}
-
-.job-title, .credential-name {
-  color: #f5f5f5;
-  position: relative;
-}
-
-.job-title:after, .credential-name:after {
-  content: "";
-  position: absolute;
-  left: -5px;
-  right: -5px;
-  bottom: -2px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.6), transparent);
-  opacity: 0;
-  transform: scaleX(0.8);
-  transition: all 0.3s ease;
-}
-
-.job:hover .job-title:after {
-  opacity: 1;
-  transform: scaleX(1);
-}
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
+        h1, h2 {
+            background: linear-gradient(90deg, #fff 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-
-        header {
-            margin-top: 4rem;
-            margin-bottom: 3rem;
-        }
-
-        .intro {
-            font-size: 1rem;
-            color: #cccccc;
-            margin-bottom: 0.5rem;
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .rotating-text {
-            display: flex;
-            align-items: center;
+        .container { max-width: 800px; margin: 0 auto; }
+        header { margin: 4rem 0 3rem; }
+        .intro { font-size: 1rem; color: #ccc; margin-bottom: 0.5rem; }
+        h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+        .rotating-text, .skill-text, .credential-text {
             height: 1.5rem;
-            margin-bottom: 3rem;
-            
-
+            margin-bottom: 1rem;
+            position: relative;
         }
-
-        .rotating-text span {
-            font-size: 1rem;
-            opacity: 0;
+        .rotating-text span, .skill-text span, .credential-text span {
             position: absolute;
-            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+            transition: opacity 0.5s;
         }
-
-        .rotating-text span.visible {
+        .rotating-text span.visible, .skill-text span.visible, .credential-text span.visible {
             opacity: 1;
         }
-
-        .prefix {
-            color: #999;
-            margin-right: 0.5rem;
-        }
-
-        section {
-            margin-bottom: 2rem;
-        }
-
-        h2 {
-            font-size: 1rem;
-            color: #cccccc;
-            margin-bottom: 1rem;
-        }
-
+        section { margin-bottom: 2rem; }
+        h2 { font-size: 1rem; color: #ccc; margin-bottom: 1rem; }
         .job {
             display: flex;
             align-items: center;
             margin-bottom: 1rem;
         }
-
-        .job-title {
+        .job-title, .job-company, .credential-name {
             font-weight: bold;
-            margin-right: 0.5rem;
-            transition: transform 0.3s ease-in-out; /* Magnification effect */
+            transition: transform 0.3s;
         }
-
-        .job-title:hover {
-            transform: scale(1.1); /* Magnify on hover */
+        .job-title:hover, .job-company:hover, .credential-name:hover {
+            transform: scale(1.1);
             cursor: pointer;
         }
-
-        .job-at {
-            color: #999;
-            margin-right: 0.5rem;
-        }
-
-        .job-company {
-            margin-left: 0.5rem;
-        }
-
+        .job-at { color: #999; margin: 0 0.5rem; }
         .company-logo {
             width: 20px;
             height: 20px;
             margin-left: 10px;
             border-radius: 3px;
         }
-
         .links {
             display: flex;
             gap: 1.5rem;
             margin-bottom: 3rem;
         }
-
         .links a {
             color: #f5f5f5;
             text-decoration: none;
-            position: relative;
-            transition: all 0.3s ease-in-out; /* Smooth transition for hover */
+            transition: all 0.3s;
         }
-
         .links a:hover {
-            color: #a78bfa; /* Change color on hover */
+            color: #a78bfa;
             text-decoration: underline;
-            transform: scale(1.05); /* Slight magnification */
+            transform: scale(1.05);
         }
-
         .links a:after {
             content: "↗";
             font-size: 0.75rem;
@@ -212,7 +83,35 @@ h1, h2 {
             top: -0.5rem;
             margin-left: 0.25rem;
         }
-
+        .credentials-carousel {
+            margin-top: 1rem;
+            height: 180px;
+            position: relative;
+        }
+        .credential-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            transition: opacity 0.5s;
+        }
+        .credential-item.visible { opacity: 1; }
+        .credential-image {
+            width: 160px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+            background: #1a1a1a;
+            border-radius: 4px;
+            padding: 0.5rem;
+        }
+        .credential-issuer {
+            font-size: 0.8rem;
+            color: #aaa;
+            text-align: center;
+        }
         .footer-info {
             display: flex;
             align-items: center;
@@ -221,116 +120,6 @@ h1, h2 {
             color: #999;
             font-size: 0.9rem;
         }
-
-        .location-icon {
-            margin-right: 0.5rem;
-        }
-
-        .skills {
-            margin-bottom: 3rem;
-        }
-
-        .skill-text {
-            display: flex;
-            align-items: center;
-            height: 1.5rem;
-            margin-bottom: 1rem;
-        
-
-        }
-
-        .skill-text span {
-            font-size: 1rem;
-            opacity: 0;
-            position: absolute;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .skill-text span.visible {
-            opacity: 1;
-        }
-
-        .skill-rotating:hover {
-            transform: scale(1.1); /* Magnify on hover */
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        /* Credentials section styles */
-        .credentials {
-            margin-bottom: 3rem;
-        }
-
-        .credentials-carousel {
-            margin-top: 1rem;
-            height: 180px;
-            position: relative;
-        }
-
-        .credential-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: absolute;
-            opacity: 0;
-            width: 100%;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .credential-item.visible {
-            opacity: 1;
-        }
-
-        .credential-image {
-            width: 160px;
-            height: 120px;
-            object-fit: contain;
-            margin-bottom: 1rem;
-            background-color: #1a1a1a;
-            border-radius: 4px;
-            padding: 0.5rem;
-        }
-
-        .credential-name {
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin-bottom: 0.25rem;
-            text-align: center;
-            transition: transform 0.3s ease-in-out; /* Magnification effect */
-        }
-
-        .credential-name:hover {
-            transform: scale(1.1); /* Magnify on hover */
-            cursor: pointer;
-        }
-
-        .credential-issuer {
-            font-size: 0.8rem;
-            color: #aaa;
-            text-align: center;
-        }
-
-        .credential-text {
-            display: flex;
-            align-items: center;
-            height: 1.5rem;
-            margin-bottom: 1rem;
-           
-
-        }
-
-        .credential-text span {
-            font-size: 1rem;
-            opacity: 0;
-            position: absolute;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .credential-text span.visible {
-            opacity: 1;
-        }
-    
-        /* Starry background styles */
         .stars-container {
             position: fixed;
             top: 0;
@@ -341,320 +130,48 @@ h1, h2 {
             overflow: hidden;
             pointer-events: none;
         }
-
         .star {
             position: absolute;
-            background-color: white;
+            background: white;
             border-radius: 50%;
             opacity: 0.8;
         }
-
         .shooting-star {
             position: absolute;
             height: 2px;
             background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%);
-            border-radius: 0;
             opacity: 1;
             transform-origin: left center;
-            z-index: 1;
             box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.6);
         }
-
         @keyframes shoot {
-            0% {
-                transform: translateX(0) translateY(0);
-                opacity: 1;
-                width: 100%;
-            }
-            10% {
-                opacity: 1;
-                width: 100%;
-            }
-            70% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateX(var(--travel-x)) translateY(var(--travel-y));
-                opacity: 0;
-                width: 60%;
-            }
+            0% { transform: translateX(0) translateY(0); opacity: 1; width: 100%; }
+            10% { opacity: 1; width: 100%; }
+            70% { opacity: 0.8; }
+            100% { transform: translateX(var(--travel-x)) translateY(var(--travel-y)); opacity: 0; width: 60%; }
         }
-
-        .shooting-star:after {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 20px;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 100% 0 0 100%;
-            filter: blur(1px);
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            h1 { font-size: 2.2rem; }
+            .credential-image { width: 140px; height: 100px; }
         }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+            .job { flex-wrap: wrap; gap: 0.3rem; }
+            .job-at { display: none; }
+            .credentials-carousel { height: 150px; }
+            .credential-image { width: 120px; height: 90px; }
+            .footer-info { flex-direction: column; gap: 0.5rem; text-align: center; margin-top: 3rem; }
         }
-        .job-company {
-    position: relative; /* Required for the pseudo-element */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for magnification */
-}
-
-.job-company:hover {
-    transform: scale(1.1); /* Magnify on hover */
-    cursor: pointer;
-}
-
-.job-company::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -2px; /* Position the underline below the text */
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.6), transparent);
-    opacity: 0; /* Hide by default */
-    transform: scaleX(0.8); /* Initial scale */
-    transition: all 0.3s ease; /* Smooth transition for the underline */
-}
-
-.job-company:hover::after {
-    opacity: 1; /* Show on hover */
-    transform: scaleX(1); /* Expand the underline */
-}
-.floating-nav {
-    position: fixed;
-    right: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    z-index: 1000;
-}
-
-.nav-item {
-    position: relative;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #f5f5f5;
-    transition: all 0.3s ease;
-}
-
-.nav-symbol {
-    font-size: 1.4rem;
-    transition: all 0.3s ease;
-}
-
-.nav-text {
-    position: absolute;
-    right: 2.5rem;
-    white-space: nowrap;
-    opacity: 0;
-    transform: translateX(10px);
-    transition: all 0.3s ease;
-    background: rgba(15, 15, 15, 0.9);
-    padding: 0.3rem 0.8rem;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    pointer-events: none;
-    border: 1px solid rgba(167, 139, 250, 0.3);
-}
-
-.nav-text::after {
-    content: "";
-    position: absolute;
-    right: -6px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 6px solid rgba(167, 139, 250, 0.3);
-}
-
-.nav-item:hover .nav-text {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.nav-item:hover .nav-symbol {
-    color: #a78bfa;
-    transform: scale(1.2);
-    text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
-}
-
-/* Ensure stars stay behind navigation */
-.stars-container {
-    z-index: -1;
-}
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    body {
-        padding: 1rem;
-    }
-
-    .container {
-        max-width: 90%;
-    }
-
-    h1 {
-        font-size: 2.2rem;
-    }
-
-    .intro {
-        font-size: 0.9rem;
-    }
-
-    .rotating-text span,
-    .skill-text span,
-    .credential-text span {
-        font-size: 0.9rem;
-    }
-
-    .floating-nav {
-        right: 1rem;
-        gap: 1rem;
-    }
-
-    .nav-symbol {
-        font-size: 1.2rem;
-    }
-
-    .nav-text {
-        font-size: 0.8rem;
-        padding: 0.2rem 0.6rem;
-        right: 2rem;
-    }
-
-    .job-title, 
-    .job-company,
-    .credential-name {
-        font-size: 0.9rem;
-    }
-
-    .company-logo {
-        width: 16px;
-        height: 16px;
-    }
-
-    .credential-image {
-        width: 140px;
-        height: 100px;
-    }
-}
-
-@media (max-width: 480px) {
-    .floating-nav {
-        bottom: 1rem;
-        top: auto;
-        right: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        flex-direction: row;
-        background: rgba(15, 15, 15, 0.95);
-        padding: 0.8rem 1.2rem;
-        border-radius: 30px;
-        backdrop-filter: blur(8px);
-        border: 1px solid rgba(167, 139, 250, 0.2);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    .nav-text {
-        display: none;
-    }
-
-    .nav-symbol {
-        font-size: 1.1rem;
-    }
-
-    .nav-item:hover .nav-symbol {
-        transform: scale(1.1);
-    }
-
-    h1 {
-        font-size: 1.8rem;
-        margin-bottom: 0.3rem;
-    }
-
-    .intro {
-        font-size: 0.85rem;
-    }
-
-    .job {
-        flex-wrap: wrap;
-        gap: 0.3rem;
-    }
-
-    .job-at {
-        display: none;
-    }
-
-    .company-logo {
-        margin-left: auto;
-    }
-
-    .credentials-carousel {
-        height: 150px;
-    }
-
-    .credential-image {
-        width: 120px;
-        height: 90px;
-    }
-
-    .footer-info {
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
-        margin-top: 3rem;
-    }
-
-    .container {
-        padding-bottom: 5rem;
-    }
-}
-
-/* Mobile Touch Support */
-@media (hover: none) and (pointer: coarse) {
-    .nav-item {
-        padding: 0.5rem;
-    }
-    
-    .job-title:hover,
-    .credential-name:hover,
-    .job-company:hover {
-        transform: none !important;
-    }
-    
-    .links a:hover {
-        transform: none !important;
-    }
-}
     </style>
-    
 </head>
 <body>
-    <body>
-        <div class="stars-container" id="starsContainer"></div>
-        <div class="container">
+    <div class="stars-container" id="stars"></div>
     <div class="container">
         <header>
             <div class="intro">hello there!! I'm</div>
             <h1>Adedolamu Ayandele</h1>
-            <div class="rotating-text">
-                <span class="rotating-label visible">Network Security Engineer</span>
-                <span class="rotating-label">Securing things one byte at a time</span>
-                <span class="rotating-label">problem solver</span>
-                <span class="rotating-label">creative thinker</span>
-                <span class="rotating-label">Cyber Security Graduate</span>
-                <span class="rotating-label">Ibadan to Mars🚀</span>
-                <span class="rotating-label">Older than i look</span>
-                <span class="rotating-label">I forgot how to change it to light mode</span>
-            </div>
+            <div class="rotating-text" id="mainText"></div>
         </header>
         
         <section>
@@ -663,7 +180,7 @@ h1, h2 {
                 <div class="job-title">Network Security Engineer</div>
                 <div class="job-at">at</div>
                 <div class="job-company">Wema Bank, Marina</div>
-                <img src="images/wema-bank.jpg" alt="Wema Bank Logo" class="company-logo" title="Wema Bank">
+                <img src="images/wema-bank.jpg" alt="Wema Bank" class="company-logo">
             </div>
         </section>
         
@@ -673,157 +190,25 @@ h1, h2 {
                 <div class="job-title">Network Engineer</div>
                 <div class="job-at">at</div>
                 <div class="job-company">Wema Bank, Marina</div>
-                <img src="images/wema-bank.jpg" alt="Wema Bank Logo" class="company-logo" title="Wema Bank">
+                <img src="images/wema-bank.jpg" alt="Wema Bank" class="company-logo">
             </div>
             <div class="job">
                 <div class="job-title">Cyber Security</div>
                 <div class="job-at">at</div>
                 <div class="job-company">Caleb University, Imota</div>
-                <img src="images/caleb-uni.jpg" alt="Caleb Logo" class="company-logo" title="University">
+                <img src="images/caleb-uni.jpg" alt="Caleb University" class="company-logo">
             </div>
         </section>
         
-        <section class="skills">
+        <section>
             <h2>skills</h2>
-            <div class="skill-text">
-                <span class="skill-rotating visible">Network Security</span>
-                <span class="skill-rotating">Firewall Configuration</span>
-                <span class="skill-rotating">Switching & Routing</span>
-                <span class="skill-rotating">Endpoint Security</span>
-                <span class="skill-rotating">Cisco Identity Service Engine (ISE)</span>
-                <span class="skill-rotating">Solarwinds Orion</span>
-                <span class="skill-rotating">Cybersecurity</span>
-                <span class="skill-rotating">Python Programming</span>
-                <span class="skill-rotating">Cloud Security</span>
-                <span class="skill-rotating">API Security</span>
-                <span class="skill-rotating">Risk Assessment</span>
-                <span class="skill-rotating">AI Risk Management</span>
-                <span class="skill-rotating">AI Governance</span>
-                <span class="skill-rotating">Global AI Law</span>
-                <span class="skill-rotating">Regulatory Compliance</span>
-                <span class="skill-rotating">Network Segmentation</span>
-                <span class="skill-rotating">System Security</span>
-                <span class="skill-rotating">OAuth</span>
-                <span class="skill-rotating">OpenID Connect</span>
-                <span class="skill-rotating">JSON Web Token(JWT)</span>
-                <span class="skill-rotating">Fortigate</span>
-                <span class="skill-rotating">Intrusion Detection</span>
-                <span class="skill-rotating">SSL Inspection</span>
-                <span class="skill-rotating">Web Filtering</span>
-                <span class="skill-rotating">Virtual Private Network (VPN)</span>
-                <span class="skill-rotating">ISO 27001</span>
-                <span class="skill-rotating">Application Security</span>
-                <span class="skill-rotating">Cyber Threat Intelligence (CTI)</span>
-            </div>
+            <div class="skill-text" id="skillText"></div>
         </section>
 
-        <section class="credentials">
+        <section>
             <h2>credentials</h2>
-            <div class="credential-text">
-              
-                <span class="credential-rotating visible">Fortinet Certified Associate in Cybersecurity</span>
-                <span class="credential-rotating">Endpoint Security</span>
-                <span class="credential-rotating">API Security Architect</span>
-                <span class="credential-rotating">Fortinet Certified Fundamentals in Cybersecurity</span>
-                <span class="credential-rotating">Cyber Threat Mnagement</span>
-                <span class="credential-rotating">ISO/IEC 27001 Information Security Associate™</span>
-                <span class="credential-rotating">AI Security & Governance</span>
-                <span class="credential-rotating">Cpanel Administration and Web Hosting Management</span>
-                <span class="credential-rotating">IT Fundamentals in Workplace</span>
-                <span class="credential-rotating">Network Analytics Career Pathway</span>
-                <span class="credential-rotating">Crash Course on Python</span>
-                <span class="credential-rotating">The Fundamentals Of Digital Marketing</span>
-                <span class="credential-rotating">Google Analytics</span>
-                <span class="credential-rotating">Introduction to Cloud Computing</span>
-            </div>
-            
-            <div class="credentials-carousel">
-                <div class="credential-item visible">
-                    <img src="images/fca.jpg" alt="Fortinet Certified Associate in Cybersecurity" class="credential-image">
-                    <div class="credential-name">Fortinet Certified Associate in Cybersecurity</div>
-                    <div class="credential-issuer">Fortinet</div>
-                </div>
-
-                <div class="credential-item">
-                    <img src="images/end-sec.jpg" alt="Endpoint Security" class="credential-image">
-                    <div class="credential-name">Endpoint Security</div>
-                    <div class="credential-issuer">Cisco</div>
-                </div>
-
-                  <div class="credential-item">
-                    <img src="images/api-sec.jpg" alt="API Security Architect" class="credential-image">
-                    <div class="credential-name">API Security Architect</div>
-                    <div class="credential-issuer">API Academy</div>
-                </div>
-
-                <div class="credential-item">
-                    <img src="images/fca.jpg" alt="Fortinet Certified Fundamentals in Cybersecurity" class="credential-image">
-                    <div class="credential-name">Fortinet Certified Fundamentals in Cybersecurity</div>
-                    <div class="credential-issuer">Fortinet</div>
-                </div>
-
-                  <div class="credential-item">
-                    <img src="images/cyb-th-man.jpg" alt="Cyber Threat Management" class="credential-image">
-                    <div class="credential-name">Cyber Threat Management</div>
-                    <div class="credential-issuer">Cisco</div>
-                </div>
-
-                <div class="credential-item">
-                    <img src="images/sf-iso.jpg" alt="ISO/IEC 27001 Information Security Associate™" class="credential-image">
-                    <div class="credential-name">ISO/IEC 27001 Information Security Associate™</div>
-                    <div class="credential-issuer">SkillFront</div>
-                </div>
-
-                <div class="credential-item">
-                    <img src="images/ai-security.jpg" alt="AI Security & Governance" class="credential-image">
-                    <div class="credential-name">AI Security & Governance</div>
-                    <div class="credential-issuer">Securiti</div>
-                </div>
-
-
-                <div class="credential-item">
-                    <img src="images/cpanel-webhosting.jpg" alt="Cpanel Certification" class="credential-image">
-                    <div class="credential-name">Cpanel Administration and Web Hosting Management</div>
-                    <div class="credential-issuer">Caleb University/CompTIA</div>
-                </div>
-                
-                <div class="credential-item">
-                    <img src="images/it-fundamentals.jpg" alt="IT Fundamentals in Workplace" class="credential-image">
-                    <div class="credential-name">IT Fundamentals in Workplace</div>
-                    <div class="credential-issuer">Caleb University/CompTIA</div>
-                </div>
-                
-                <div class="credential-item">
-                    <img src="images/network-analytics.jpg" alt="Network Analytics Career Pathway" class="credential-image">
-                    <div class="credential-name">Network Analytics Career Pathway</div>
-                    <div class="credential-issuer">Caleb University/CompTIA</div>
-                </div>
-                
-                <div class="credential-item">
-                    <img src="images/python.jpg" alt="Crash Course on Python" class="credential-image">
-                    <div class="credential-name">Crash Course on Python</div>
-                    <div class="credential-issuer">Google</div>
-                </div>
-
-                
-                <div class="credential-item">
-                    <img src="images/digital-marketing.jpg" alt="The Fundamentals Of Digital Marketing" class="credential-image">
-                    <div class="credential-name">The Fundamentals Of Digital Marketing</div>
-                    <div class="credential-issuer">Google</div>
-                </div>
-
-                <div class="credential-item">
-                    <img src="images/google-analytics.jpg" alt="Google Analytics" class="credential-image">
-                    <div class="credential-name">Google Analytics</div>
-                    <div class="credential-issuer">Google</div>
-                </div>
-
-                <div class="credential-item">
-                    <img src="images/cloud-computing.jpg" alt="Introduction to Cloud Computing" class="credential-image">
-                    <div class="credential-name">Introduction to Cloud Computing</div>
-                    <div class="credential-issuer">IBM</div>
-                </div>
-            </div>
+            <div class="credential-text" id="credText"></div>
+            <div class="credentials-carousel" id="credCarousel"></div>
         </section>
         
         <div class="links">
@@ -833,217 +218,127 @@ h1, h2 {
         </div>
         
         <div class="footer-info">
-            <div>
-                <span class="location-icon">🇳🇬</span>
-                <span>Lagos, Nigeria</span>
-            </div>
+            <div><span>🇳🇬</span> Lagos, Nigeria</div>
             <div>♻︎save the planet</div>
         </div>
     </div>
     
     <script>
-        // Text rotation functionality
-        const rotatingLabels = document.querySelectorAll('.rotating-label');
-        let currentIndex = 0;
-        
-        function rotateText() {
-            // Hide current text
-            rotatingLabels[currentIndex].classList.remove('visible');
-            
-            // Move to next text or back to beginning
-            currentIndex = (currentIndex + 1) % rotatingLabels.length;
-            
-            // Show new text
-            rotatingLabels[currentIndex].classList.add('visible');
-        }
-        
-        // Change text every 3 seconds
-        setInterval(rotateText, 3000);
-        
-        // Credentials rotation functionality
-        const credentialTexts = document.querySelectorAll('.credential-rotating');
-        const credentialItems = document.querySelectorAll('.credential-item');
-        let credentialIndex = 0;
-        
-        function rotateCredentials() {
-            // Hide current credential text and item
-            credentialTexts[credentialIndex].classList.remove('visible');
-            credentialItems[credentialIndex].classList.remove('visible');
-            
-            // Move to next credential or back to beginning
-            credentialIndex = (credentialIndex + 1) % credentialItems.length;
-            
-            // Show new credential text and item
-            credentialTexts[credentialIndex].classList.add('visible');
-            credentialItems[credentialIndex].classList.add('visible');
-        }
-        
-        // Change credentials every 4 seconds
-        setInterval(rotateCredentials, 4000);
+        const rotate = (items, container, interval) => {
+            let i = 0;
+            items.forEach((text, idx) => {
+                const span = document.createElement('span');
+                span.textContent = text;
+                if (idx === 0) span.classList.add('visible');
+                container.appendChild(span);
+            });
+            setInterval(() => {
+                container.children[i].classList.remove('visible');
+                i = (i + 1) % items.length;
+                container.children[i].classList.add('visible');
+            }, interval);
+        };
 
-        // Skills rotation functionality
-const skillTexts = document.querySelectorAll('.skill-rotating');
-let skillIndex = 0;
+        rotate(['Network Security Engineer', 'Securing things one byte at a time', 'problem solver', 'creative thinker', 'Cyber Security Graduate', 'Ibadan to Mars🚀', 'Older than i look', 'I forgot how to change it to light mode'], document.getElementById('mainText'), 3000);
 
-function rotateSkills() {
-    // Hide current skill text
-    skillTexts[skillIndex].classList.remove('visible');
-    
-    // Move to next skill or back to beginning
-    skillIndex = (skillIndex + 1) % skillTexts.length;
-    
-    // Show new skill text
-    skillTexts[skillIndex].classList.add('visible');
-}
+        rotate(['Network Security', 'Firewall Configuration', 'Switching & Routing', 'Endpoint Security', 'Cisco Identity Service Engine (ISE)', 'Solarwinds Orion', 'Cybersecurity', 'Python Programming', 'Cloud Security', 'API Security', 'Risk Assessment', 'AI Risk Management', 'AI Governance', 'Global AI Law', 'Regulatory Compliance', 'Network Segmentation', 'System Security', 'OAuth', 'OpenID Connect', 'JSON Web Token(JWT)', 'Fortigate', 'Intrusion Detection', 'SSL Inspection', 'Web Filtering', 'Virtual Private Network (VPN)', 'ISO 27001', 'Application Security', 'Cyber Threat Intelligence (CTI)'], document.getElementById('skillText'), 3500);
 
-// Change skills text every 3.5 seconds
-setInterval(rotateSkills, 3500);
+        const creds = [
+            ['Fortinet Certified Associate in Cybersecurity', 'Fortinet', 'images/fca.jpg'],
+            ['Endpoint Security', 'Cisco', 'images/end-sec.jpg'],
+            ['API Security Architect', 'API Academy', 'images/api-sec.jpg'],
+            ['Fortinet Certified Fundamentals in Cybersecurity', 'Fortinet', 'images/fca.jpg'],
+            ['Cyber Threat Management', 'Cisco', 'images/cyb-th-man.jpg'],
+            ['ISO/IEC 27001 Information Security Associate™', 'SkillFront', 'images/sf-iso.jpg'],
+            ['AI Security & Governance', 'Securiti', 'images/ai-security.jpg'],
+            ['Cpanel Administration and Web Hosting Management', 'Caleb University/CompTIA', 'images/cpanel-webhosting.jpg'],
+            ['IT Fundamentals in Workplace', 'Caleb University/CompTIA', 'images/it-fundamentals.jpg'],
+            ['Network Analytics Career Pathway', 'Caleb University/CompTIA', 'images/network-analytics.jpg'],
+            ['Crash Course on Python', 'Google', 'images/python.jpg'],
+            ['The Fundamentals Of Digital Marketing', 'Google', 'images/digital-marketing.jpg'],
+            ['Google Analytics', 'Google', 'images/google-analytics.jpg'],
+            ['Introduction to Cloud Computing', 'IBM', 'images/cloud-computing.jpg']
+        ];
 
-// Create starry background
-document.addEventListener('DOMContentLoaded', function() {
-    const starsContainer = document.getElementById('starsContainer');
-    const starsCount = 200;
-    
-    // Star data storage
-    let stars = [];
-    
-    // Create regular stars
-    for (let i = 0; i < starsCount; i++) {
-        const star = document.createElement('div');
-        star.className = 'star';
+        const credText = document.getElementById('credText');
+        const credCarousel = document.getElementById('credCarousel');
         
-        // Random size between 1px and 3px
-        const size = Math.random() * 2 + 1;
-        star.style.width = `${size}px`;
-        star.style.height = `${size}px`;
-        
-        // Random position
-        const leftPos = Math.random() * 100;
-        const topPos = Math.random() * 100;
-        star.style.left = `${leftPos}%`;
-        star.style.top = `${topPos}%`;
-        
-        // Random opacity for twinkling effect
-        star.style.opacity = `${Math.random() * 0.7 + 0.3}`;
-        
-        // Add twinkling animation with random duration
-        const twinkleDuration = Math.random() * 3 + 2;
-        star.style.animation = `twinkle ${twinkleDuration}s ease-in-out infinite alternate`;
-        
-        starsContainer.appendChild(star);
-        
-        // Store star info for later shooting star creation
-        stars.push({
-            element: star,
-            left: leftPos,
-            top: topPos,
-            size: size
+        creds.forEach(([name, issuer, img], idx) => {
+            const span = document.createElement('span');
+            span.textContent = name;
+            if (idx === 0) span.classList.add('visible');
+            credText.appendChild(span);
+            
+            const div = document.createElement('div');
+            div.className = 'credential-item' + (idx === 0 ? ' visible' : '');
+            div.innerHTML = `<img src="${img}" alt="${name}" class="credential-image"><div class="credential-name">${name}</div><div class="credential-issuer">${issuer}</div>`;
+            credCarousel.appendChild(div);
         });
-    }
-    
-    // Function to make a star shoot
-    function makeStarShoot() {
-    // Create a shooting star element
-    const shootingStar = document.createElement('div');
-    shootingStar.className = 'shooting-star';
-    
-    // Position it randomly on the top or right edge of the screen
-    const startFromTop = Math.random() > 0.5;
-    
-    let leftPos, topPos;
-    
-    if (startFromTop) {
-        // Start from top edge
-        leftPos = Math.random() * 70 + 15; // 15-85% from left
-        topPos = -5; // Just above the visible area
-    } else {
-        // Start from right edge
-        leftPos = 105; // Just off the right edge
-        topPos = Math.random() * 40; // First 40% of the screen height
-    }
-    
-    shootingStar.style.left = `${leftPos}%`;
-    shootingStar.style.top = `${topPos}%`;
-    
-    // Set random length and angle
-    const length = Math.random() * 70 + 50; // Longer trails: 50-120px
-    
-    // Calculate angle based on starting position
-    let angle;
-    if (startFromTop) {
-        angle = Math.random() * 30 + 240; // 240-270 degrees (diagonally down-left)
-    } else {
-        angle = Math.random() * 30 + 190; // 190-220 degrees (diagonally down-left)
-    }
-    
-    shootingStar.style.width = `${length}px`;
-    shootingStar.style.transform = `rotate(${angle}deg)`;
-    
-    // Calculate distance to travel based on angle
-    const radians = angle * (Math.PI / 180);
-    const travelDistance = Math.random() * 300 + 200; // 200-500px travel distance
-    const travelX = -Math.cos(radians) * travelDistance;
-    const travelY = Math.sin(radians) * travelDistance;
-    
-    // Set custom properties for the animation
-    shootingStar.style.setProperty('--travel-x', `${travelX}px`);
-    shootingStar.style.setProperty('--travel-y', `${travelY}px`);
-    
-    // Randomize speed (duration)
-    const duration = Math.random() * 0.8 + 0.6; // 0.6-1.4 seconds (faster)
-    
-    // Apply the shoot animation
-    shootingStar.style.animation = `shoot ${duration}s cubic-bezier(0.05, 0.5, 0.5, 1) forwards`;
-    
-    // Random thickness for variety
-    const thickness = Math.random() * 1.5 + 1;
-    shootingStar.style.height = `${thickness}px`;
-    
-    // Add a subtle color tint to some meteors
-    if (Math.random() > 0.7) {
-        const hue = Math.random() > 0.5 ? '210' : '45'; // Blue or gold tint
-        const colorIntensity = Math.random() * 20 + 5; // 5-25%
-        shootingStar.style.background = `linear-gradient(90deg, 
-            rgba(255,255,255,0.9) 0%, 
-            hsla(${hue}, 100%, 70%, 0.5) 30%, 
-            rgba(255,255,255,0) 100%)`;
-    }
-    
-    // Add to DOM
-    starsContainer.appendChild(shootingStar);
-    
-    // Clean up after animation
-    setTimeout(() => {
-        shootingStar.remove();
-    }, duration * 1000 + 100);
-}
 
-// Trigger shooting stars with better timing
-function scheduleShootingStars() {
-    // Create a cluster of 1-3 shooting stars
-    const count = Math.floor(Math.random() * 3) + 1;
-    
-    for (let i = 0; i < count; i++) {
-        // Add slight delay between stars in the same cluster
-        setTimeout(makeStarShoot, i * (Math.random() * 100 + 50));
-    }
-    
-    // Schedule next cluster with variable timing
-    const nextCluster = Math.random() * 7000 + 2000; // 2-9 seconds between clusters
-    setTimeout(scheduleShootingStars, nextCluster);
-}
+        let ci = 0;
+        setInterval(() => {
+            credText.children[ci].classList.remove('visible');
+            credCarousel.children[ci].classList.remove('visible');
+            ci = (ci + 1) % creds.length;
+            credText.children[ci].classList.add('visible');
+            credCarousel.children[ci].classList.add('visible');
+        }, 4000);
 
-// Start the shooting star sequence
-scheduleShootingStars();
+        const stars = document.getElementById('stars');
+        for (let i = 0; i < 200; i++) {
+            const s = document.createElement('div');
+            s.className = 'star';
+            const size = Math.random() * 2 + 1;
+            Object.assign(s.style, {
+                width: size + 'px',
+                height: size + 'px',
+                left: Math.random() * 100 + '%',
+                top: Math.random() * 100 + '%',
+                opacity: Math.random() * 0.7 + 0.3
+            });
+            stars.appendChild(s);
+        }
 
-// Initial burst of shooting stars when page loads
-setTimeout(() => {
-    makeStarShoot();
-    setTimeout(makeStarShoot, 700);
-    setTimeout(makeStarShoot, 1500);
-}, 1000);
-});
-        
+        const shoot = () => {
+            const ss = document.createElement('div');
+            ss.className = 'shooting-star';
+            const fromTop = Math.random() > 0.5;
+            const left = fromTop ? Math.random() * 70 + 15 : 105;
+            const top = fromTop ? -5 : Math.random() * 40;
+            const angle = fromTop ? Math.random() * 30 + 240 : Math.random() * 30 + 190;
+            const len = Math.random() * 70 + 50;
+            const dist = Math.random() * 300 + 200;
+            const rad = angle * Math.PI / 180;
+            const dur = Math.random() * 0.8 + 0.6;
+            
+            Object.assign(ss.style, {
+                left: left + '%',
+                top: top + '%',
+                width: len + 'px',
+                transform: `rotate(${angle}deg)`,
+                animation: `shoot ${dur}s cubic-bezier(0.05, 0.5, 0.5, 1) forwards`
+            });
+            ss.style.setProperty('--travel-x', -Math.cos(rad) * dist + 'px');
+            ss.style.setProperty('--travel-y', Math.sin(rad) * dist + 'px');
+            
+            stars.appendChild(ss);
+            setTimeout(() => ss.remove(), dur * 1000 + 100);
+        };
+
+        const schedule = () => {
+            const count = Math.floor(Math.random() * 3) + 1;
+            for (let i = 0; i < count; i++) {
+                setTimeout(shoot, i * (Math.random() * 100 + 50));
+            }
+            setTimeout(schedule, Math.random() * 7000 + 2000);
+        };
+
+        setTimeout(() => {
+            shoot();
+            setTimeout(shoot, 700);
+            setTimeout(shoot, 1500);
+            schedule();
+        }, 1000);
     </script>
 </body>
-</html> 
+</html>
