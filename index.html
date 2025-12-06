@@ -3,81 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adedolamu Ayandele | Network Security Engineer | Cybersecurity Professional</title>
-    <meta name="description" content="Adedolamu Ayandele is a skilled Network Security Engineer specializing in cybersecurity, network infrastructure, and AI security. Expertise in Firewall Configuration, Cloud Security, and Regulatory Compliance.">
-    <meta name="keywords" content="Network Security, Cybersecurity, Network Engineer, Firewall Configuration, Cloud Security, AI Security, Information Security, Penetration Testing, Threat Intelligence">
+    <title>Adedolamu Ayandele | Network Security Engineer</title>
+    
+    <meta name="description" content="Skilled Network Security Engineer specializing in cybersecurity, network infrastructure, and AI security.">
+    <meta name="keywords" content="Network Security, Cybersecurity, Network Engineer, Firewall, AI Security">
     <meta name="author" content="Adedolamu Ayandele">
     <meta name="robots" content="index, follow">
-    <meta name="googlebot" content="index, follow">
-    <link rel="canonical" href="https://adedolamudean.github.io/adedolamu/">
     
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://adedolamudean.github.io/adedolamu/">
     <meta property="og:title" content="Adedolamu Ayandele">
+    <meta property="og:description" content="Network Security Engineer specializing in cybersecurity and AI security.">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://adedolamudean.github.io/adedolamu/">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="canonical" href="https://adedolamudean.github.io/adedolamu/">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
-            background-color: #0f0f0f; color: #f5f5f5; padding: 2rem; line-height: 1.6;
-            font-family: 'Roboto', sans-serif; position: relative; overflow-x: hidden;
+            background-color: #0f0f0f; color: #f5f5f5; padding: 2rem;
+            line-height: 1.6; font-family: 'Roboto', sans-serif;
+            position: relative; overflow-x: hidden;
         }
-
-        /* Gradient Headings */
+        .container { max-width: 800px; margin: 0 auto; }
+        header { margin-top: 4rem; margin-bottom: 3rem; }
+        section { margin-bottom: 2rem; }
+        
+        /* Typography & Colors */
         h1, h2 {
             background: linear-gradient(90deg, #fff 0%, #a78bfa 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             text-shadow: 0 0 30px rgba(167, 139, 250, 0.3);
         }
-
-        .container { max-width: 800px; margin: 0 auto; }
-        header { margin-top: 4rem; margin-bottom: 3rem; }
-        section { margin-bottom: 2rem; }
-        .intro { font-size: 1rem; color: #cccccc; margin-bottom: 0.5rem; }
         h1 { font-size: 3rem; font-weight: bold; margin-bottom: 0.5rem; }
         h2 { font-size: 1rem; color: #cccccc; margin-bottom: 1rem; }
-
-        /* Rotating Text Base Styles */
+        .intro { font-size: 1rem; color: #cccccc; margin-bottom: 0.5rem; }
+        
+        /* Rotating Text Areas */
         .rotating-text, .skill-text, .credential-text {
             display: flex; align-items: center; height: 1.5rem; margin-bottom: 3rem; position: relative;
         }
         .rotating-text span, .skill-text span, .credential-text span {
             font-size: 1rem; opacity: 0; position: absolute; transition: opacity 0.5s ease-in-out;
         }
-        .rotating-text span.visible, .skill-text span.visible, .credential-text span.visible { opacity: 1; }
+        .visible { opacity: 1 !important; }
 
-        /* Job & Hover Effects */
+        /* Job & Credential Items */
         .job { display: flex; align-items: center; margin-bottom: 1rem; }
-        .job-title, .job-company, .credential-name { position: relative; transition: transform 0.3s ease-in-out; }
-        .job-title:hover, .job-company:hover, .credential-name:hover { transform: scale(1.1); cursor: pointer; }
+        .job-title, .job-company, .credential-name {
+            position: relative; transition: transform 0.3s ease-in-out;
+        }
+        .job-title { font-weight: bold; margin-right: 0.5rem; color: #f5f5f5; }
+        .job-at { color: #999; margin-right: 0.5rem; }
+        .job-company { margin-left: 0.5rem; }
         
+        /* Hover Effects & Underlines */
+        .job-title:hover, .job-company:hover, .credential-name:hover, .skill-rotating:hover {
+            transform: scale(1.1); cursor: pointer;
+        }
         .job-title:after, .credential-name:after, .job-company::after {
             content: ""; position: absolute; left: -5px; right: -5px; bottom: -2px; height: 1px;
             background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.6), transparent);
             opacity: 0; transform: scaleX(0.8); transition: all 0.3s ease;
         }
-        .job:hover .job-title:after, .job-company:hover::after { opacity: 1; transform: scaleX(1); }
+        .job:hover .job-title:after, .job-company:hover::after, .credential-name:hover:after {
+            opacity: 1; transform: scaleX(1);
+        }
 
-        .job-title { font-weight: bold; margin-right: 0.5rem; }
-        .job-at { color: #999; margin-right: 0.5rem; }
-        .job-company { margin-left: 0.5rem; }
         .company-logo { width: 20px; height: 20px; margin-left: 10px; border-radius: 3px; }
-
-        /* Links */
-        .links { display: flex; gap: 1.5rem; margin-bottom: 3rem; }
-        .links a {
-            color: #f5f5f5; text-decoration: none; position: relative; transition: all 0.3s ease-in-out;
-        }
-        .links a:hover { color: #a78bfa; text-decoration: underline; transform: scale(1.05); }
-        .links a:after {
-            content: "↗"; font-size: 0.75rem; position: relative; top: -0.5rem; margin-left: 0.25rem;
-        }
 
         /* Credentials Carousel */
         .credentials-carousel { margin-top: 1rem; height: 180px; position: relative; }
@@ -85,7 +80,6 @@
             display: flex; flex-direction: column; align-items: center; position: absolute;
             opacity: 0; width: 100%; transition: opacity 0.5s ease-in-out;
         }
-        .credential-item.visible { opacity: 1; }
         .credential-image {
             width: 160px; height: 120px; object-fit: contain; margin-bottom: 1rem;
             background-color: #1a1a1a; border-radius: 4px; padding: 0.5rem;
@@ -93,36 +87,17 @@
         .credential-name { font-size: 0.9rem; font-weight: bold; margin-bottom: 0.25rem; text-align: center; }
         .credential-issuer { font-size: 0.8rem; color: #aaa; text-align: center; }
 
+        /* Links */
+        .links { display: flex; gap: 1.5rem; margin-bottom: 3rem; }
+        .links a { color: #f5f5f5; text-decoration: none; position: relative; transition: all 0.3s ease-in-out; }
+        .links a:hover { color: #a78bfa; text-decoration: underline; transform: scale(1.05); }
+        .links a:after { content: "↗"; font-size: 0.75rem; position: relative; top: -0.5rem; margin-left: 0.25rem; }
+
         /* Footer */
-        .footer-info {
-            display: flex; align-items: center; justify-content: space-between; margin-top: 5rem;
-            color: #999; font-size: 0.9rem;
-        }
+        .footer-info { display: flex; align-items: center; justify-content: space-between; margin-top: 5rem; color: #999; font-size: 0.9rem; }
         .location-icon { margin-right: 0.5rem; }
 
-        /* Starry Background */
-        .stars-container {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1; overflow: hidden; pointer-events: none;
-        }
-        .star { position: absolute; background-color: white; border-radius: 50%; opacity: 0.8; }
-        .shooting-star {
-            position: absolute; height: 2px;
-            background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%);
-            opacity: 1; transform-origin: left center; z-index: 1; box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.6);
-        }
-        @keyframes shoot {
-            0% { transform: translate(0, 0); opacity: 1; width: 100%; }
-            10% { opacity: 1; width: 100%; }
-            70% { opacity: 0.8; }
-            100% { transform: translate(var(--travel-x), var(--travel-y)); opacity: 0; width: 60%; }
-        }
-        .shooting-star:after {
-            content: ""; position: absolute; top: 0; right: 0; width: 20px; height: 2px;
-            background: rgba(255, 255, 255, 0.3); border-radius: 100% 0 0 100%; filter: blur(1px);
-        }
-
-        /* Floating Navigation (Using original CSS but consolidated) */
+        /* Navigation */
         .floating-nav {
             position: fixed; right: 2rem; top: 50%; transform: translateY(-50%);
             display: flex; flex-direction: column; gap: 1.5rem; z-index: 1000;
@@ -132,71 +107,66 @@
         .nav-text {
             position: absolute; right: 2.5rem; white-space: nowrap; opacity: 0; transform: translateX(10px);
             transition: all 0.3s ease; background: rgba(15, 15, 15, 0.9); padding: 0.3rem 0.8rem;
-            border-radius: 4px; font-size: 0.9rem; pointer-events: none;
-            border: 1px solid rgba(167, 139, 250, 0.3);
+            border-radius: 4px; font-size: 0.9rem; pointer-events: none; border: 1px solid rgba(167, 139, 250, 0.3);
         }
         .nav-text::after {
             content: ""; position: absolute; right: -6px; top: 50%; transform: translateY(-50%);
-            width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent;
-            border-left: 6px solid rgba(167, 139, 250, 0.3);
+            width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 6px solid rgba(167, 139, 250, 0.3);
         }
         .nav-item:hover .nav-text { opacity: 1; transform: translateX(0); }
         .nav-item:hover .nav-symbol { color: #a78bfa; transform: scale(1.2); text-shadow: 0 0 10px rgba(167, 139, 250, 0.5); }
 
-        /* Media Queries (Original logic maintained, consolidated styles) */
+        /* Background Effects */
+        .stars-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; pointer-events: none; }
+        .star { position: absolute; background-color: white; border-radius: 50%; opacity: 0.8; }
+        .shooting-star {
+            position: absolute; height: 2px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%);
+            opacity: 1; transform-origin: left center; z-index: 1; box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.6);
+        }
+        .shooting-star:after {
+            content: ""; position: absolute; top: 0; right: 0; width: 20px; height: 2px;
+            background: rgba(255, 255, 255, 0.3); border-radius: 100% 0 0 100%; filter: blur(1px);
+        }
+        @keyframes shoot {
+            0% { transform: translateX(0) translateY(0); opacity: 1; width: 100%; }
+            100% { transform: translateX(var(--travel-x)) translateY(var(--travel-y)); opacity: 0; width: 60%; }
+        }
+
+        /* Mobile */
         @media (max-width: 768px) {
             body { padding: 1rem; }
             .container { max-width: 90%; }
             h1 { font-size: 2.2rem; }
-            .rotating-text span, .skill-text span, .credential-text span { font-size: 0.9rem; }
             .floating-nav { right: 1rem; gap: 1rem; }
-            .nav-symbol { font-size: 1.2rem; }
-            .nav-text { font-size: 0.8rem; padding: 0.2rem 0.6rem; right: 2rem; }
-            .job-title, .job-company, .credential-name { font-size: 0.9rem; }
-            .company-logo { width: 16px; height: 16px; }
-            .credential-image { width: 140px; height: 100px; }
+            .nav-text { font-size: 0.8rem; right: 2rem; }
         }
-
         @media (max-width: 480px) {
             .floating-nav {
                 bottom: 1rem; top: auto; right: auto; left: 50%; transform: translateX(-50%);
                 flex-direction: row; background: rgba(15, 15, 15, 0.95); padding: 0.8rem 1.2rem;
-                border-radius: 30px; backdrop-filter: blur(8px);
-                border: 1px solid rgba(167, 139, 250, 0.2); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+                border-radius: 30px; backdrop-filter: blur(8px); border: 1px solid rgba(167, 139, 250, 0.2);
             }
             .nav-text { display: none; }
-            .nav-symbol { font-size: 1.1rem; }
-            h1 { font-size: 1.8rem; margin-bottom: 0.3rem; }
             .job { flex-wrap: wrap; gap: 0.3rem; }
             .job-at { display: none; }
             .company-logo { margin-left: auto; }
             .credentials-carousel { height: 150px; }
-            .credential-image { width: 120px; height: 90px; }
             .footer-info { flex-direction: column; gap: 0.5rem; text-align: center; margin-top: 3rem; }
-            .container { padding-bottom: 5rem; }
-        }
-
-        /* Mobile Touch Support */
-        @media (hover: none) and (pointer: coarse) {
-            .nav-item { padding: 0.5rem; }
-            .job-title:hover, .credential-name:hover, .job-company:hover, .links a:hover {
-                transform: none !important;
-            }
         }
     </style>
 </head>
 <body>
     <div class="stars-container" id="starsContainer"></div>
     <div class="container">
-        
         <nav class="floating-nav">
-            <a href="#about" class="nav-item"><span class="nav-text">Intro</span><span class="nav-symbol">👋</span></a>
-            <a href="#experience" class="nav-item"><span class="nav-text">Experience</span><span class="nav-symbol">💼</span></a>
-            <a href="#skills" class="nav-item"><span class="nav-text">Skills</span><span class="nav-symbol">💡</span></a>
-            <a href="#credentials" class="nav-item"><span class="nav-text">Certificates</span><span class="nav-symbol">🏆</span></a>
+            <a href="#" class="nav-item"><span class="nav-text">Intro</span><span class="nav-symbol">👋</span></a>
+            <a href="#" class="nav-item"><span class="nav-text">Experience</span><span class="nav-symbol">💼</span></a>
+            <a href="#" class="nav-item"><span class="nav-text">Skills</span><span class="nav-symbol">💡</span></a>
+            <a href="#" class="nav-item"><span class="nav-text">Certificates</span><span class="nav-symbol">🏆</span></a>
         </nav>
-        
-        <header id="about">
+
+        <header>
             <div class="intro">hello there!! I'm</div>
             <h1>Adedolamu Ayandele</h1>
             <div class="rotating-text">
@@ -211,31 +181,33 @@
             </div>
         </header>
         
-        <section id="experience">
+        <section>
             <h2>currently?</h2>
             <div class="job">
                 <div class="job-title">Network Security Engineer</div>
                 <div class="job-at">at</div>
                 <div class="job-company">Wema Bank, Marina</div>
-                <img src="images/wema-bank.jpg" alt="Wema Bank Logo" class="company-logo" title="Wema Bank">
+                <img src="images/wema-bank.jpg" alt="Wema Bank Logo" class="company-logo">
             </div>
-            
+        </section>
+        
+        <section>
             <h2>previously</h2>
             <div class="job">
                 <div class="job-title">Network Engineer</div>
                 <div class="job-at">at</div>
                 <div class="job-company">Wema Bank, Marina</div>
-                <img src="images/wema-bank.jpg" alt="Wema Bank Logo" class="company-logo" title="Wema Bank">
+                <img src="images/wema-bank.jpg" alt="Wema Bank Logo" class="company-logo">
             </div>
             <div class="job">
                 <div class="job-title">Cyber Security</div>
                 <div class="job-at">at</div>
                 <div class="job-company">Caleb University, Imota</div>
-                <img src="images/caleb-uni.jpg" alt="Caleb Logo" class="company-logo" title="University">
+                <img src="images/caleb-uni.jpg" alt="Caleb Logo" class="company-logo">
             </div>
         </section>
         
-        <section id="skills" class="skills">
+        <section class="skills">
             <h2>skills</h2>
             <div class="skill-text">
                 <span class="skill-rotating visible">Network Security</span>
@@ -269,7 +241,7 @@
             </div>
         </section>
 
-        <section id="credentials" class="credentials">
+        <section class="credentials">
             <h2>credentials</h2>
             <div class="credential-text">
                 <span class="credential-rotating visible">Fortinet Certified Associate in Cybersecurity</span>
@@ -290,7 +262,7 @@
             
             <div class="credentials-carousel">
                 <div class="credential-item visible">
-                    <img src="images/fca.jpg" alt="Fortinet Certified Associate in Cybersecurity" class="credential-image">
+                    <img src="images/fca.jpg" alt="Fortinet Certified Associate" class="credential-image">
                     <div class="credential-name">Fortinet Certified Associate in Cybersecurity</div>
                     <div class="credential-issuer">Fortinet</div>
                 </div>
@@ -305,7 +277,7 @@
                     <div class="credential-issuer">API Academy</div>
                 </div>
                 <div class="credential-item">
-                    <img src="images/fca.jpg" alt="Fortinet Certified Fundamentals in Cybersecurity" class="credential-image">
+                    <img src="images/fca.jpg" alt="Fortinet Certified Fundamentals" class="credential-image">
                     <div class="credential-name">Fortinet Certified Fundamentals in Cybersecurity</div>
                     <div class="credential-issuer">Fortinet</div>
                 </div>
@@ -315,7 +287,7 @@
                     <div class="credential-issuer">Cisco</div>
                 </div>
                 <div class="credential-item">
-                    <img src="images/sf-iso.jpg" alt="ISO/IEC 27001 Information Security Associate™" class="credential-image">
+                    <img src="images/sf-iso.jpg" alt="ISO/IEC 27001" class="credential-image">
                     <div class="credential-name">ISO/IEC 27001 Information Security Associate™</div>
                     <div class="credential-issuer">SkillFront</div>
                 </div>
@@ -330,22 +302,22 @@
                     <div class="credential-issuer">Caleb University/CompTIA</div>
                 </div>
                 <div class="credential-item">
-                    <img src="images/it-fundamentals.jpg" alt="IT Fundamentals in Workplace" class="credential-image">
+                    <img src="images/it-fundamentals.jpg" alt="IT Fundamentals" class="credential-image">
                     <div class="credential-name">IT Fundamentals in Workplace</div>
                     <div class="credential-issuer">Caleb University/CompTIA</div>
                 </div>
                 <div class="credential-item">
-                    <img src="images/network-analytics.jpg" alt="Network Analytics Career Pathway" class="credential-image">
+                    <img src="images/network-analytics.jpg" alt="Network Analytics" class="credential-image">
                     <div class="credential-name">Network Analytics Career Pathway</div>
                     <div class="credential-issuer">Caleb University/CompTIA</div>
                 </div>
                 <div class="credential-item">
-                    <img src="images/python.jpg" alt="Crash Course on Python" class="credential-image">
+                    <img src="images/python.jpg" alt="Python" class="credential-image">
                     <div class="credential-name">Crash Course on Python</div>
                     <div class="credential-issuer">Google</div>
                 </div>
                 <div class="credential-item">
-                    <img src="images/digital-marketing.jpg" alt="The Fundamentals Of Digital Marketing" class="credential-image">
+                    <img src="images/digital-marketing.jpg" alt="Digital Marketing" class="credential-image">
                     <div class="credential-name">The Fundamentals Of Digital Marketing</div>
                     <div class="credential-issuer">Google</div>
                 </div>
@@ -355,7 +327,7 @@
                     <div class="credential-issuer">Google</div>
                 </div>
                 <div class="credential-item">
-                    <img src="images/cloud-computing.jpg" alt="Introduction to Cloud Computing" class="credential-image">
+                    <img src="images/cloud-computing.jpg" alt="Cloud Computing" class="credential-image">
                     <div class="credential-name">Introduction to Cloud Computing</div>
                     <div class="credential-issuer">IBM</div>
                 </div>
@@ -369,128 +341,99 @@
         </div>
         
         <div class="footer-info">
-            <div>
-                <span class="location-icon">🇳🇬</span>
-                <span>Lagos, Nigeria</span>
-            </div>
+            <div><span class="location-icon">🇳🇬</span><span>Lagos, Nigeria</span></div>
             <div>♻︎save the planet</div>
         </div>
     </div>
     
     <script>
-        // Use a single function for all rotating text and star animations
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // --- Rotation Logic ---
-            function setupRotation(selector, interval) {
-                const labels = document.querySelectorAll(selector);
-                if (labels.length === 0) return;
-                let currentIndex = 0;
-                
-                function rotate() {
-                    labels[currentIndex].classList.remove('visible');
-                    currentIndex = (currentIndex + 1) % labels.length;
-                    labels[currentIndex].classList.add('visible');
-                }
-                setInterval(rotate, interval);
+        document.addEventListener('DOMContentLoaded', () => {
+            // Reusable Rotation Function
+            const startRotation = (selector, interval) => {
+                const els = document.querySelectorAll(selector);
+                if (!els.length) return;
+                let i = 0;
+                setInterval(() => {
+                    els[i].classList.remove('visible');
+                    i = (i + 1) % els.length;
+                    els[i].classList.add('visible');
+                }, interval);
+            };
+
+            startRotation('.rotating-label', 3000);
+            startRotation('.credential-rotating', 4000);
+            startRotation('.skill-rotating', 3500);
+
+            // Sync credential images with text
+            const credItems = document.querySelectorAll('.credential-item');
+            if (credItems.length) {
+                let ci = 0;
+                setInterval(() => {
+                    credItems[ci].classList.remove('visible');
+                    ci = (ci + 1) % credItems.length;
+                    credItems[ci].classList.add('visible');
+                }, 4000);
             }
 
-            setupRotation('.rotating-label', 3000); // Header text
-            setupRotation('.credential-rotating', 4000); // Credentials text
-            setupRotation('.skill-rotating', 3500); // Skills text
-            
-            // Credentials Image/Text Synchronization
-            const credentialTexts = document.querySelectorAll('.credential-rotating');
-            const credentialItems = document.querySelectorAll('.credential-item');
-            if (credentialItems.length > 0) {
-                let credentialIndex = 0;
-                
-                function syncCredentials() {
-                    credentialItems[credentialIndex].classList.remove('visible');
-                    credentialIndex = (credentialIndex + 1) % credentialItems.length;
-                    credentialItems[credentialIndex].classList.add('visible');
-                }
-                setInterval(syncCredentials, 4000);
-            }
+            // Starry Background
+            const container = document.getElementById('starsContainer');
+            const styleSheet = document.createElement("style");
+            styleSheet.innerText = `@keyframes twinkle { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }`;
+            document.head.appendChild(styleSheet);
 
-            // --- Starry Background & Shooting Star Logic ---
-            const starsContainer = document.getElementById('starsContainer');
-            const starsCount = 150; // A balanced count
-
-            // CSS for twinkling effect (missing from your original CSS, added here for completeness)
-            const style = document.createElement('style');
-            style.innerHTML = '@keyframes twinkle { 0% { opacity: 0.3; } 50% { opacity: 0.8; } 100% { opacity: 0.3; } }';
-            document.head.appendChild(style);
-            
-            // Create regular stars
-            for (let i = 0; i < starsCount; i++) {
-                const size = Math.random() * 2 + 1;
+            for (let i = 0; i < 200; i++) {
                 const star = document.createElement('div');
+                const size = Math.random() * 2 + 1;
                 star.className = 'star';
-                star.style.cssText = `width:${size}px; height:${size}px; left:${Math.random() * 100}%; top:${Math.random() * 100}%; opacity:${Math.random() * 0.7 + 0.3}; animation: twinkle ${Math.random() * 3 + 2}s ease-in-out infinite alternate;`;
-                starsContainer.appendChild(star);
+                star.style.cssText = `
+                    width: ${size}px; height: ${size}px;
+                    left: ${Math.random() * 100}%; top: ${Math.random() * 100}%;
+                    opacity: ${Math.random() * 0.7 + 0.3};
+                    animation: twinkle ${Math.random() * 3 + 2}s ease-in-out infinite alternate;
+                `;
+                container.appendChild(star);
             }
-            
-            // Function to make a star shoot
-            function makeStarShoot() {
-                const shootingStar = document.createElement('div');
-                shootingStar.className = 'shooting-star';
-                
-                const startFromTop = Math.random() > 0.5;
-                let leftPos, topPos, angle;
-                
-                if (startFromTop) {
-                    leftPos = Math.random() * 70 + 15;
-                    topPos = -5;
-                    angle = Math.random() * 30 + 240;
-                } else {
-                    leftPos = 105;
-                    topPos = Math.random() * 40;
-                    angle = Math.random() * 30 + 190;
-                }
-                
-                shootingStar.style.left = `${leftPos}%`;
-                shootingStar.style.top = `${topPos}%`;
-                
-                const length = Math.random() * 70 + 50;
-                shootingStar.style.width = `${length}px`;
-                shootingStar.style.transform = `rotate(${angle}deg)`;
-                
-                const radians = angle * (Math.PI / 180);
-                const travelDistance = Math.random() * 300 + 200;
-                const travelX = -Math.cos(radians) * travelDistance;
-                const travelY = Math.sin(radians) * travelDistance;
-                
-                shootingStar.style.setProperty('--travel-x', `${travelX}px`);
-                shootingStar.style.setProperty('--travel-y', `${travelY}px`);
-                
-                const duration = Math.random() * 0.8 + 0.6;
-                shootingStar.style.animation = `shoot ${duration}s cubic-bezier(0.05, 0.5, 0.5, 1) forwards`;
-                
-                const thickness = Math.random() * 1.5 + 1;
-                shootingStar.style.height = `${thickness}px`;
 
-                // Re-added the subtle color tint logic for completeness based on original JS
+            // Shooting Stars
+            const shoot = () => {
+                const star = document.createElement('div');
+                star.className = 'shooting-star';
+                const fromTop = Math.random() > 0.5;
+                const left = fromTop ? Math.random() * 70 + 15 : 105;
+                const top = fromTop ? -5 : Math.random() * 40;
+                const angle = fromTop ? Math.random() * 30 + 240 : Math.random() * 30 + 190;
+                const len = Math.random() * 70 + 50;
+                
+                star.style.left = `${left}%`;
+                star.style.top = `${top}%`;
+                star.style.width = `${len}px`;
+                star.style.height = `${Math.random() * 1.5 + 1}px`;
+                star.style.transform = `rotate(${angle}deg)`;
+                
+                // Color tint
                 if (Math.random() > 0.7) {
                     const hue = Math.random() > 0.5 ? '210' : '45';
-                    shootingStar.style.background = `linear-gradient(90deg, rgba(255,255,255,0.9) 0%, hsla(${hue}, 100%, 70%, 0.5) 30%, rgba(255,255,255,0) 100%)`;
+                    star.style.background = `linear-gradient(90deg, rgba(255,255,255,0.9) 0%, hsla(${hue}, 100%, 70%, 0.5) 30%, rgba(255,255,255,0) 100%)`;
                 }
 
-                starsContainer.appendChild(shootingStar);
+                // Calc distance
+                const rad = angle * (Math.PI / 180);
+                const dist = Math.random() * 300 + 200;
+                star.style.setProperty('--travel-x', `${-Math.cos(rad) * dist}px`);
+                star.style.setProperty('--travel-y', `${Math.sin(rad) * dist}px`);
                 
-                setTimeout(() => shootingStar.remove(), duration * 1000 + 100);
-            }
+                const dur = Math.random() * 0.8 + 0.6;
+                star.style.animation = `shoot ${dur}s cubic-bezier(0.05, 0.5, 0.5, 1) forwards`;
+                container.appendChild(star);
+                setTimeout(() => star.remove(), dur * 1000 + 100);
+            };
 
-            function scheduleShootingStars() {
-                const count = Math.floor(Math.random() * 3) + 1;
-                for (let i = 0; i < count; i++) {
-                    setTimeout(makeStarShoot, i * (Math.random() * 100 + 50));
-                }
-                const nextCluster = Math.random() * 7000 + 2000;
-                setTimeout(scheduleShootingStars, nextCluster);
-            }
-
-            setTimeout(scheduleShootingStars, 2000);
+            const schedule = () => {
+                for(let i=0; i<Math.floor(Math.random()*3)+1; i++) setTimeout(shoot, i * (Math.random()*100+50));
+                setTimeout(schedule, Math.random() * 7000 + 2000);
+            };
+            schedule();
+            setTimeout(() => { shoot(); setTimeout(shoot, 700); }, 1000);
         });
     </script>
 </body>
