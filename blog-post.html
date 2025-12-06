@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">right side down | Adedolamu Ayandele</title>
+    <title id="pageTitle">Blog Post | Adedolamu Ayandele</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -156,11 +156,13 @@
         </article>
     </div>
     
-    <script src="js/blog-data.js"></script>
     <script>
         // Get post ID from URL
         const urlParams = new URLSearchParams(window.location.search);
         const postId = urlParams.get('id');
+        
+        // Get posts from localStorage (set by blog.html)
+        const blogPosts = JSON.parse(localStorage.getItem('blogPosts') || '[]');
         
         // Find the post
         const post = blogPosts.find(p => p.id === postId);
