@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>without a coffee mug | Adedolamu Ayandele</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0f0f0f;
+            color: #f5f5f5;
+            padding: 2rem;
+            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+        }
+        h1 {
+            background: linear-gradient(90deg, #fff 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        header {
+            margin: 4rem 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1 { font-size: 3rem; }
+        .back-link {
+            color: #f5f5f5;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        .back-link:hover {
+            color: #a78bfa;
+            transform: translateX(-5px);
+        }
+        .blog-list { margin-top: 2rem; }
+        .blog-post {
+            background: #1a1a1a;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .blog-post:hover {
+            border-color: #a78bfa;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(167, 139, 250, 0.2);
+        }
+        .post-date {
+            color: #999;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+        .post-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+            color: #f5f5f5;
+        }
+        .post-excerpt {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .post-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background: rgba(167, 139, 250, 0.2);
+            color: #a78bfa;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #999;
+        }
+        .empty-state h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #fff 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .blog-post { padding: 1.5rem; }
+            header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars-container" id="stars"></div>
+    <div class="container">
+        <header>
+            <h1>Blog</h1>
+            <a href="index.html" class="back-link">← back to portfolio</a>
+        </header>
+        
+        <div class="blog-list" id="blogList"></div>
+    </div>
+    
+    <script src="js/blog-data.js"></script>
+    <script>
+        // Render blog posts
+        const blogList = document.getElementById('blogList');
+        
+        if (blogPosts.length === 0) {
+            blogList.innerHTML = `
+                <div class="empty-state">
+                    <h2>Coming Soon</h2>
+                    <p>Blog posts about network security, cybersecurity insights, and tech thoughts will appear here.</p>
+                </div>
+            `;
+        } else {
+            blogPosts.forEach(post => {
+                const postEl = document.createElement('div');
+                postEl.className = 'blog-post';
+                postEl.onclick = () => window.location.href = `blog-post.html?id=${post.id}`;
+                
+                postEl.innerHTML = `
+                    <div class="post-date">${post.date}</div>
+                    <div class="post-title">${post.title}</div>
+                    <div class="post-excerpt">${post.excerpt}</div>
+                    <div class="post-tags">
+                        ${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                    </div>
+                `;
+                
+                blogList.appendChild(postEl);
+            });
+        }
+        
+        // Create stars
+        const stars = document.getElementById('stars');
+        for (let i = 0; i < 200; i++) {
+            const s = document.createElement('div');
+            s.className = 'star';
+            const size = Math.random() * 2 + 1;
+            Object.assign(s.style, {
+                width: size + 'px',
+                height: size + 'px',
+                left: Math.random() * 100 + '%',
+                top: Math.random() * 100 + '%',
+                opacity: Math.random() * 0.7 + 0.3
+            });
+            stars.appendChild(s);
+        }
+    </script>
+</body>
+</html>
