@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">right side down | Adedolamu Ayandele</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0f0f0f;
+            color: #f5f5f5;
+            padding: 2rem;
+            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            background: linear-gradient(90deg, #fff 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        .back-link {
+            color: #f5f5f5;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        .back-link:hover {
+            color: #a78bfa;
+            transform: translateX(-5px);
+        }
+        .post-header {
+            margin: 2rem 0 3rem;
+        }
+        .post-date {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .post-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .tag {
+            background: rgba(167, 139, 250, 0.2);
+            color: #a78bfa;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+        .post-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #e5e5e5;
+        }
+        .post-content h2 {
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1rem;
+        }
+        .post-content h3 {
+            font-size: 1.4rem;
+            margin: 2rem 0 0.75rem;
+        }
+        .post-content p {
+            margin-bottom: 1.5rem;
+        }
+        .post-content ul, .post-content ol {
+            margin: 1.5rem 0 1.5rem 2rem;
+        }
+        .post-content li {
+            margin-bottom: 0.75rem;
+        }
+        .post-content code {
+            background: #1a1a1a;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #a78bfa;
+        }
+        .post-content pre {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border: 1px solid #333;
+        }
+        .post-content pre code {
+            background: none;
+            padding: 0;
+            color: #e5e5e5;
+        }
+        .post-content blockquote {
+            border-left: 4px solid #a78bfa;
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            color: #ccc;
+            font-style: italic;
+        }
+        .post-content a {
+            color: #a78bfa;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s;
+        }
+        .post-content a:hover {
+            border-bottom-color: #a78bfa;
+        }
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+        }
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            h1 { font-size: 2rem; }
+            .post-content { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars-container" id="stars"></div>
+    <div class="container">
+        <a href="blog.html" class="back-link">← back to blog</a>
+        
+        <article>
+            <div class="post-header">
+                <div class="post-date" id="postDate"></div>
+                <h1 id="postTitle"></h1>
+                <div class="post-tags" id="postTags"></div>
+            </div>
+            
+            <div class="post-content" id="postContent"></div>
+        </article>
+    </div>
+    
+    <script src="js/blog-data.js"></script>
+    <script>
+        // Get post ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const postId = urlParams.get('id');
+        
+        // Find the post
+        const post = blogPosts.find(p => p.id === postId);
+        
+        if (post) {
+            document.getElementById('pageTitle').textContent = `${post.title} | Adedolamu Ayandele`;
+            document.getElementById('postDate').textContent = post.date;
+            document.getElementById('postTitle').textContent = post.title;
+            document.getElementById('postTags').innerHTML = post.tags.map(tag => 
+                `<span class="tag">${tag}</span>`
+            ).join('');
+            document.getElementById('postContent').innerHTML = post.content;
+        } else {
+            document.getElementById('postContent').innerHTML = `
+                <p style="text-align: center; color: #999; padding: 4rem 0;">
+                    Post not found. <a href="blog.html" style="color: #a78bfa;">Return to blog</a>
+                </p>
+            `;
+        }
+        
+        // Create stars
+        const stars = document.getElementById('stars');
+        for (let i = 0; i < 200; i++) {
+            const s = document.createElement('div');
+            s.className = 'star';
+            const size = Math.random() * 2 + 1;
+            Object.assign(s.style, {
+                width: size + 'px',
+                height: size + 'px',
+                left: Math.random() * 100 + '%',
+                top: Math.random() * 100 + '%',
+                opacity: Math.random() * 0.7 + 0.3
+            });
+            stars.appendChild(s);
+        }
+    </script>
+</body>
+</html>
